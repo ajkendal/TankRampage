@@ -1,7 +1,7 @@
 # TankRampage
 Video Game Programming - Final Project
 
-![Tank Rampage](https://github.com/ajkendal/TankRampage/master/tankRampage.png)
+![Tank Rampage](tankRampage.png "Games Start Screen")
 
 Project was developed by Amanda J. Kendal-Brown & Abdulhai Almontashri
 
