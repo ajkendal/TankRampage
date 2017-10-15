@@ -2785,71 +2785,6 @@ Units is normalized time.</para>
       </summary>
       <param name="size">The number of previews that can be loaded into the cache before the least used previews are being unloaded.</param>
     </member>
-    <member name="T:UnityEditor.AudioCurveRendering">
-      <summary>
-        <para>Antialiased curve rendering functionality used by audio tools in the editor.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.AudioCurveRendering.AudioCurveAndColorEvaluator">
-      <summary>
-        <para>Curve evaluation function that allows simultaneous evaluation of the curve y-value and a color of the curve at that point.</para>
-      </summary>
-      <param name="x">Normalized x-position in the range [0; 1] at which the curve should be evaluated.</param>
-      <param name="col">Color of the curve at the evaluated point.</param>
-    </member>
-    <member name="T:UnityEditor.AudioCurveRendering.AudioCurveEvaluator">
-      <summary>
-        <para>Curve evaluation function used to evaluate the curve y-value and at the specified point.</para>
-      </summary>
-      <param name="x">Normalized x-position in the range [0; 1] at which the curve should be evaluated.</param>
-    </member>
-    <member name="T:UnityEditor.AudioCurveRendering.AudioMinMaxCurveAndColorEvaluator">
-      <summary>
-        <para>Curve evaluation function that allows simultaneous evaluation of the min- and max-curves. The returned minValue and maxValue values are expected to be in the range [-1; 1] and a value of 0 corresponds to the vertical center of the rectangle that is drawn into. Values outside of this range will be clamped. Additionally the color of the curve at this point is evaluated.</para>
-      </summary>
-      <param name="x">Normalized x-position in the range [0; 1] at which the min- and max-curves should be evaluated.</param>
-      <param name="col">Color of the curve at the specified evaluation point.</param>
-      <param name="minValue">Returned value of the minimum curve. Clamped to [-1; 1].</param>
-      <param name="maxValue">Returned value of the maximum curve. Clamped to [-1; 1].</param>
-    </member>
-    <member name="M:UnityEditor.AudioCurveRendering.DrawCurve(UnityEngine.Rect,UnityEditor.AudioCurveRendering/AudioCurveEvaluator,UnityEngine.Color)">
-      <summary>
-        <para>Renders a thin curve determined by the curve evaluation function. The solid color of the curve is set by the curveColor argument.</para>
-      </summary>
-      <param name="r">Rectangle determining the size of the graph.</param>
-      <param name="eval">Curve evaluation function.</param>
-      <param name="curveColor">Solid fill color of the curve. The alpha-channel determines the amount of opacity.</param>
-    </member>
-    <member name="M:UnityEditor.AudioCurveRendering.DrawFilledCurve(UnityEngine.Rect,UnityEditor.AudioCurveRendering/AudioCurveEvaluator,UnityEngine.Color)">
-      <summary>
-        <para>Fills the area between the curve evaluated by the AudioCurveAndColorEvaluator provided and the bottom of the rectngle with smooth gradients along the edges.</para>
-      </summary>
-      <param name="r">Rectangle determining the size of the graph.</param>
-      <param name="eval">Normalized x-position in the range [0; 1] at which the curve should be evaluated. The returned value is expected to be in the range [-1; 1] and a value of 0 corresponds to the vertical center of the rectangle that is drawn into. Values outside of this range will be clamped.</param>
-      <param name="curveColor">Solid fill color of the curve. The alpha-channel determines the amount of opacity.</param>
-    </member>
-    <member name="M:UnityEditor.AudioCurveRendering.DrawFilledCurve(UnityEngine.Rect,UnityEditor.AudioCurveRendering/AudioCurveAndColorEvaluator)">
-      <summary>
-        <para>Fills the area between the curve evaluated by the AudioCurveAndColorEvaluator provided and the bottom of the rectngle with smooth gradients along the edges.</para>
-      </summary>
-      <param name="r">Rectangle determining the size of the graph.</param>
-      <param name="eval">Normalized x-position in the range [0; 1] at which the curve should be evaluated. The returned value is expected to be in the range [-1; 1] and a value of 0 corresponds to the vertical center of the rectangle that is drawn into. Values outside of this range will be clamped.</param>
-      <param name="curveColor">Solid fill color of the curve. The alpha-channel determines the amount of opacity.</param>
-    </member>
-    <member name="M:UnityEditor.AudioCurveRendering.DrawMinMaxFilledCurve(UnityEngine.Rect,UnityEditor.AudioCurveRendering/AudioMinMaxCurveAndColorEvaluator)">
-      <summary>
-        <para>Fills the area between the two curves evaluated by the AudioMinMaxCurveAndColorEvaluator provided with smooth gradients along the edges.</para>
-      </summary>
-      <param name="r">Rectangle determining the size of the graph.</param>
-      <param name="eval">Normalized x-position in the range [0; 1] at which the min- and max-curves should be evaluated. The returned minValue and maxValue values are expected to be in the range [-1; 1] and a value of 0 corresponds to the vertical center of the rectangle that is drawn into. Values outside of this range will be clamped.</param>
-    </member>
-    <member name="M:UnityEditor.AudioCurveRendering.DrawSymmetricFilledCurve(UnityEngine.Rect,UnityEditor.AudioCurveRendering/AudioCurveAndColorEvaluator)">
-      <summary>
-        <para>Fills the area between the curve evaluated by the AudioCurveAndColorEvaluator provided and its vertical mirror image with smooth gradients along the edges. Useful for drawing amplitude plots of audio signals.</para>
-      </summary>
-      <param name="r">Rectangle determining the size of the graph.</param>
-      <param name="eval">Normalized x-position in the range [0; 1] at which the curve should be evaluated. The returned value is expected to be in the range [0; 1] and a value of 0 corresponds to the vertical center of the rectangle that is drawn into. Values outside of this range will be clamped.</param>
-    </member>
     <member name="T:UnityEditor.AudioImporter">
       <summary>
         <para>Audio importer lets you modify AudioClip import settings from editor scripts.</para>
@@ -10630,11 +10565,6 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
         <para>PS4 Build Subtarget.</para>
       </summary>
     </member>
-    <member name="P:UnityEditor.EditorUserBuildSettings.ps4HardwareTarget">
-      <summary>
-        <para>Specifies which version of PS4 hardware to target.</para>
-      </summary>
-    </member>
     <member name="P:UnityEditor.EditorUserBuildSettings.psmBuildSubtarget">
       <summary>
         <para>PSM Build Subtarget.</para>
@@ -13242,11 +13172,6 @@ Note: Use HandleUtility.GetHandleSize where you might want to have constant scre
         <para>Supported iOS deployment versions.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_10_0">
-      <summary>
-        <para>iOS 10.0.</para>
-      </summary>
-    </member>
     <member name="F:UnityEditor.iOSTargetOSVersion.iOS_4_0">
       <summary>
         <para>iOS 4.0.</para>
@@ -13300,41 +13225,6 @@ Note: Use HandleUtility.GetHandleSize where you might want to have constant scre
     <member name="F:UnityEditor.iOSTargetOSVersion.iOS_8_1">
       <summary>
         <para>iOS 8.1.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_8_2">
-      <summary>
-        <para>iOS 8.2.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_8_3">
-      <summary>
-        <para>iOS 8.3.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_8_4">
-      <summary>
-        <para>iOS 8.4.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_9_0">
-      <summary>
-        <para>iOS 9.0.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_9_1">
-      <summary>
-        <para>iOS 9.1.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_9_2">
-      <summary>
-        <para>iOS 9.2.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.iOSTargetOSVersion.iOS_9_3">
-      <summary>
-        <para>iOS 9.3.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.iOSTargetOSVersion.Unknown">
@@ -16382,16 +16272,6 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
         <para>Should insecure HTTP downloads be allowed?</para>
       </summary>
     </member>
-    <member name="P:UnityEditor.PlayerSettings.iOS.appleDeveloperTeamID">
-      <summary>
-        <para>Set this property with your Apple Developer Team ID. You can find this on the Apple Developer website under &lt;a href="https:developer.apple.comaccount#membership"&gt; Account &gt; Membership &lt;/a&gt; . This sets the Team ID for the generated Xcode project, allowing developers to use the Build and Run functionality. An Apple Developer Team ID must be set here for automatic signing of your app.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.iOS.appleEnableAutomaticSigning">
-      <summary>
-        <para>Set this property to true for Xcode to attempt to automatically sign your app based on your appleDeveloperTeamID.</para>
-      </summary>
-    </member>
     <member name="P:UnityEditor.PlayerSettings.iOS.applicationDisplayName">
       <summary>
         <para>iOS application display name.</para>
@@ -16405,11 +16285,6 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
     <member name="P:UnityEditor.PlayerSettings.iOS.exitOnSuspend">
       <summary>
         <para>Application should exit when suspended to background.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.iOS.iOSManualProvisioningProfileID">
-      <summary>
-        <para>A provisioning profile Universally Unique Identifier (UUID) that Xcode will use to build your iOS app in Manual Signing mode.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.iOS.overrideIPodMusic">
@@ -16460,11 +16335,6 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
     <member name="P:UnityEditor.PlayerSettings.iOS.targetOSVersion">
       <summary>
         <para>Deployment minimal version of iOS.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.PlayerSettings.iOS.tvOSManualProvisioningProfileID">
-      <summary>
-        <para>A provisioning profile Universally Unique Identifier (UUID) that Xcode will use to build your tvOS app in Manual Signing mode.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.iOS.useOnDemandResources">
@@ -17589,6 +17459,192 @@ To force a reload of the mask, simply set  ModelImporterClipAnimation.maskSource
     <member name="T:UnityEditor.PlayerSettings.WSAImageType">
       <summary>
         <para>Image types, supported by Windows Store Apps.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.PlayerSettings.XboxOne">
+      <summary>
+        <para>Xbox One Specific Player Settings.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.AddAllowedProductId(System.String)">
+      <summary>
+        <para>Add a ProductId to the list of products that can load the content package created from your project.  This setting is only available for content packages.</para>
+      </summary>
+      <param name="id"></param>
+      <returns>
+        <para>Returns false if the product Id was already in the allowed list.</para>
+      </returns>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.AllowedProductIds">
+      <summary>
+        <para>Get the list of projects that can load this content package.  This setting is only available for content packages.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.AppManifestOverridePath">
+      <summary>
+        <para>Xbox One optional parameter that lets you use a specified Manifest file rather than generated for you.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.ContentId">
+      <summary>
+        <para>Xbox One Content ID to be used in constructing game package.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.Description">
+      <summary>
+        <para>A friendly description that can be displayed to users.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.DisableKinectGpuReservation">
+      <summary>
+        <para>Disabling the kinect frees up additional GPU resources for use.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.EnablePIXSampling">
+      <summary>
+        <para>Enable sampling profiler in development builds to provide better profile markers for PIX, including Start and Update markers for script behaviors.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.EnableVariableGPU">
+      <summary>
+        <para>Turns on notifications that you are gaining/losing GPU resources.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.GameOsOverridePath">
+      <summary>
+        <para>(optional override) Location of Xbox One Game OS image file to link into ERA package being created.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.GetCapability(System.String)">
+      <summary>
+        <para>Returns a bool indicating if the given capability is enabled or not.  Please see the XDK whitepaper titled "Xbox One Submission Validator" for valid capability names.</para>
+      </summary>
+      <param name="capability"></param>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.GetGameRating(System.String)">
+      <summary>
+        <para>Get the rating value that is specified in the appxmanifest.xml file for the given ratings board.</para>
+      </summary>
+      <param name="name">The name of the ratings board that you want the rating value for.</param>
+      <returns>
+        <para>The current rating level.  The meaning of the value depends on the name of the ratings board.  The value corresponds to the entries the rating board's drop down menu, top most entry being 0 and each item lower in the list being 1 higher than the previous.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.GetSocketDefinition(System.String,System.String&amp;,System.Int32&amp;,System.Int32[]&amp;,System.String&amp;,System.Int32&amp;,System.Int32[]&amp;)">
+      <summary>
+        <para>Get the values for the socket description with the given name.</para>
+      </summary>
+      <param name="name">The name of the socket description.</param>
+      <param name="port">The port or port range the socket can use.</param>
+      <param name="protocol">The protocol the socket uses.</param>
+      <param name="usages">The allowed usage flags for this socket description.</param>
+      <param name="templateName">The name of the device association template.</param>
+      <param name="sessionRequirment">Mutiplayer requirement setting for the device association template.</param>
+      <param name="deviceUsages">The allowed usage flags for the device association template.</param>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.IsContentPackage">
+      <summary>
+        <para>Indicates if the game is a standalone game or a content package to an existing game.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.PackageUpdateGranularity">
+      <summary>
+        <para>The update granularity the package will be built with.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.PackagingEncryption">
+      <summary>
+        <para>Xbox One optional parameter that causes the makepkg process to encrypt the package for performance testing or with final retail encryption.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.PackagingOverridePath">
+      <summary>
+        <para>Xbox One optional parameter that causes the makepkg process to use your specified layout file rather than generating one for you. Required if working with asset bundles.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.PersistentLocalStorageSize">
+      <summary>
+        <para>Sets the size of the persistent local storage.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.ProductId">
+      <summary>
+        <para>Xbox One Product ID to use when building a streaming install package.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.RemoveAllowedProductId(System.String)">
+      <summary>
+        <para>Remove a ProductId from the list of products that can load the content package created from your project.  This setting is only available for content packages.</para>
+      </summary>
+      <param name="id"></param>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.RemoveSocketDefinition(System.String)">
+      <summary>
+        <para>Remove the socket description with the given name.</para>
+      </summary>
+      <param name="name"></param>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.SandboxId">
+      <summary>
+        <para>Xbox One makepkg option. Specifies the Sandbox ID to be used when building a streaming install package.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.SCID">
+      <summary>
+        <para>The service configuration ID for your title.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.SetCapability(System.String,System.Boolean)">
+      <summary>
+        <para>Mark a specific capability as enabled or enabled in the appxmanifest.xml file.  Please see the XDK whitepaper titled "Xbox One Submission Validator" for valid capability names.</para>
+      </summary>
+      <param name="capability">The name of the capability to set.</param>
+      <param name="value">Whether or not to enable the capability.</param>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.SetGameRating(System.String,System.Int32)">
+      <summary>
+        <para>Set the rating value that is specified in the appxmanifest.xml file.</para>
+      </summary>
+      <param name="name">The name of the ratings board that you are setting the rating value for.</param>
+      <param name="value">The new rating level.  The meaning of the value depends on the name of the ratings board.  The value corresponds to the entries the rating board's drop down menu, top most entry being 0 and each item lower in the list being 1 higher than the previous.</param>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.SetSocketDefinition(System.String,System.String,System.Int32,System.Int32[],System.String,System.Int32,System.Int32[])">
+      <summary>
+        <para>Set the values for the socket description with the given name.</para>
+      </summary>
+      <param name="name">The name of the socket description.</param>
+      <param name="port">The port or port range the socket can use.</param>
+      <param name="protocol">The protocol the socket uses.</param>
+      <param name="usages">The allowed usage flags for this socket description.</param>
+      <param name="templateName">The name of the device association template.</param>
+      <param name="sessionRequirment">Mutiplayer requirement setting for the device association template.</param>
+      <param name="deviceUsages">The allowed usage flags for the device association template.</param>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.SocketNames">
+      <summary>
+        <para>Get the names of the socket descriptions for the project.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.TitleId">
+      <summary>
+        <para>The TitleID uniquely identifying your title to Xbox Live services.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEditor.PlayerSettings.XboxOne.UpdateAllowedProductId(System.Int32,System.String)">
+      <summary>
+        <para>Update the value at the given index in the list of products that can load this content package.  You can use the PlayerSettings.XboxOne.AllowedProductIds property to get the existing productIds and determine their indexes.</para>
+      </summary>
+      <param name="idx"></param>
+      <param name="id"></param>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.UpdateKey">
+      <summary>
+        <para>Xbox One makepkg.exe option. Specifies the update key required when building game updates.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.PlayerSettings.XboxOne.Version">
+      <summary>
+        <para>Xbox One Version Identifier used in the Application Manifest.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.PluginImporter">
@@ -20688,6 +20744,11 @@ Values match the ProceduralMaterial::ProceduralLoadingBehavior enum.</param>
     <member name="T:UnityEditor.TextureImporterSettings">
       <summary>
         <para>Stores settings of a TextureImporter.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEditor.TextureImporterSettings.allowsAlphaSplit">
+      <summary>
+        <para>Allow Alpha splitting on the imported texture when needed (for example ETC1 compression for textures with transparency).</para>
       </summary>
     </member>
     <member name="P:UnityEditor.TextureImporterSettings.cubemapConvolution">
